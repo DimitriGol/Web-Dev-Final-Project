@@ -82,6 +82,16 @@ class List extends Model {
 	getTasks() {
 		return this.Tasks;
 	}
+	getAssociatedTasks(employee)
+	{
+		const Associated_Tasks = [];
+		for(let i = 0; i < this.Tasks.length; i++)
+		{
+			if(this.Tasks[i].getUser() == employee)
+				Associated_Tasks.push(this.Tasks[i]);
+		}
+		return Associated_Tasks;
+	}
 }
 
 List.init({
@@ -118,6 +128,14 @@ console.log(Task1.getDiscription());
 console.log(Task1.getPriority());
 console.log(Task1.getCompletion());
 
-const List1 = List.build({Employees: [Johnny, Lebron], Tasks: [Task1,Task2]});
+const Task3 = Task.build({ user: Lebron, description: "none", priority: 1, completion: 'Not Started' });
+console.log(Task1.getUser());
+console.log(Task1.getDiscription());
+console.log(Task1.getPriority());
+console.log(Task1.getCompletion());
+
+const List1 = List.build({Employees: [Johnny, Lebron], Tasks: [Task1,Task2,Task3]});
 console.log(List1.getEmployees());
 console.log(List1.getTasks());
+console.log(List1.getAssociatedTasks(Johnny));
+console.log(List1.getAssociatedTasks(Lebron));
