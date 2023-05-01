@@ -75,12 +75,49 @@ Task.init({
 		modelName: 'Task'
 	});
 
+class List extends Model {
+	getEmployees()	{
+		return this.Employees;
+	}
+	getTasks() {
+		return this.Tasks;
+	}
+}
+
+List.init({
+	Employees: {
+		type: DataTypes.ARRAY(Employee)
+	},
+	Tasks: {
+		type: DataTypes.ARRAY(Task)
+	}
+},
+	{
+		sequelize,
+		modelName: 'List'
+	});
+
 const Johnny = Employee.build({ firstName: "Johnny", lastName: "Applesseed", department: "Tech" });
 console.log(Johnny.getFullname());
 console.log(Johnny.getDepartment());
 
-const Task1 = Task.build({user: Johnny, description: "none", priority: 1, completion: 'Not Started'});
+const Lebron = Employee.build({ firstName: "Lebron", lastName: "James", department: "Sports" });
+console.log(Johnny.getFullname());
+console.log(Johnny.getDepartment());
+
+
+const Task1 = Task.build({ user: Johnny, description: "none", priority: 1, completion: 'Not Started' });
 console.log(Task1.getUser());
 console.log(Task1.getDiscription());
 console.log(Task1.getPriority());
 console.log(Task1.getCompletion());
+
+const Task2 = Task.build({ user: Lebron, description: "none", priority: 1, completion: 'Not Started' });
+console.log(Task1.getUser());
+console.log(Task1.getDiscription());
+console.log(Task1.getPriority());
+console.log(Task1.getCompletion());
+
+const List1 = List.build({Employees: [Johnny, Lebron], Tasks: [Task1,Task2]});
+console.log(List1.getEmployees());
+console.log(List1.getTasks());
