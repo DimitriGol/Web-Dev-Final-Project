@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+  color: #2B2424;
+}
+
+/* Nav.js */
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 9vh;
+  box-shadow: 5px 5px 5px #AAAAAA;
+  margin-bottom: 50px;
+}
+
+.nav-links{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-logo{
+  max-height: 3vh;
+  width: auto;
+  display: block;
+}
+
+.nav-link{
+  color: #2B2424;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.nav-link:hover{
+  color: #bf63e1;
+}
+
+/* Home.js */
+.Home-Div{
+  margin-top: 200px;
+  display: inline-block;
+}
+
+.title-logo{
+  min-height: 10vh;
+  max-height: 20vh;
+  width: auto;
+}
+
