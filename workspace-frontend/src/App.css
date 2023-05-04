@@ -3,6 +3,7 @@
   color: #2B2424;
 }
 
+/* Nav.js */
 nav{
   display: flex;
   justify-content: space-around;
@@ -26,6 +27,17 @@ nav{
   display: block;
 }
 
+.nav-link{
+  color: #2B2424;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.nav-link:hover{
+  color: #bf63e1;
+}
+
+/* Home.js */
 .Home-Div{
   margin-top: 200px;
   display: inline-block;
@@ -36,3 +48,4 @@ nav{
   max-height: 20vh;
   width: auto;
 }
+

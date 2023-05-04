@@ -15,11 +15,11 @@ function Nav(){
             </Link>
             <ul className="nav-links">
 
-                <Link style={NavStyle} to='/employees'>
+                <Link to='/employees' className='nav-link'>
                     <li>Employees</li>
                 </Link>
 
-                <Link style={NavStyle} to='/tasks'>
+                <Link to='/tasks' className='nav-link'>
                     <li>Tasks</li>
                 </Link>
             </ul>

@@ -2,8 +2,6 @@ import React from 'react';
 import '../App.css';
 import Logo from '../workspace-logo.png';
 
-
-
 function Home() {
     return (
         <div className='Home-Div'>
