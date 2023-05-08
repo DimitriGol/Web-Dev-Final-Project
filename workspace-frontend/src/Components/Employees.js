@@ -8,13 +8,7 @@ function Employees() {
 
     return (
         <div className="App">
-            <h1> Employees </h1>
-            {/* Add new employee */}
-            <div>
-                <Link to='/add-employee'>
-                    <button className='add-btn'> Add Employee </button>
-                </Link>
-            </div>
+            <h1> Employees </h1>            
 
             {/* Get list of employees and output it here */}
 
@@ -74,6 +68,13 @@ function Employees() {
                     </tr>
                 </tbody>
             </table>
+
+            {/* Add new employee */}
+            <div>
+                <Link to='/add-employee'>
+                    <button className='add-btn'> Add Employee </button>
+                </Link>
+            </div>
         </div>
     )
 }
