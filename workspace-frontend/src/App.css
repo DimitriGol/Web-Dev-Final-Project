@@ -1,4 +1,5 @@
 .App {
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   color: #2B2424;
 }
@@ -37,6 +38,8 @@ nav{
   color: #bf63e1;
 }
 
+
+
 /* Home.js */
 .Home-Div{
   margin-top: 200px;
@@ -49,3 +52,87 @@ nav{
   width: auto;
 }
 
+
+
+/* Employee.js / Tas */
+.add-btn{
+  padding: 16px 33px 16px 33px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #bf63e1;
+  color: white;
+  transition: 0.2s;
+  font-size: 15px;
+}
+.add-btn:hover{
+  background-color: #d387ef;
+  cursor: pointer;
+  /* box-shadow: 5px 5px 10px #a8a8a8; */
+}
+
+table{
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  border-collapse: collapse;
+}
+
+td{
+  padding: 8px 10px 8px 10px;
+}
+
+thead{
+  background-color: #ffffff;
+}
+
+th{
+  padding: 8px 10px 8px 10px;
+}
+
+tr:nth-child(odd) {background-color: #f2f2f2;}
+
+
+.task-table td{
+  padding: 15px 12px 15px 12px;
+}
+
+.task-table{
+  width: 75%;
+}
+
+.view-employee-btn,
+.delete-employee-btn
+{
+  /* padding: 3px 8px 3px 8px; */
+  margin: 5px;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1.5px;
+  transition: 0.1s;
+  font-size: 16px;;
+}
+
+.view-employee-btn{
+  border-color: #bf63e1;
+  color: #bf63e1;
+}
+
+.delete-employee-btn{
+  border-color: #FF5C5C;
+  color: #FF5C5C;
+}
+
+.view-employee-btn:hover{
+  cursor: pointer;
+  border-color: #ededed;
+  color: #ededed;
+  background-color: #bf63e1;
+}
+
+.delete-employee-btn:hover{
+  cursor: pointer;
+  border-color: #ededed;
+  color: #ededed;
+  background-color: #FF5C5C;
+}
