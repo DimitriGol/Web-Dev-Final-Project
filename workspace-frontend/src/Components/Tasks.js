@@ -14,6 +14,7 @@ function Tasks() {
                     <th>DESCRIPTION</th>
                     <th>PRIORITY</th>
                     <th>COMPLETED</th>
+                    <th>ACTIONS</th>
                 </thead>
 
                 <tbody>
@@ -22,18 +23,33 @@ function Tasks() {
                         <td>Make frontend responsive</td>
                         <td>High</td>
                         <td>No</td>
+                        <td>
+                            <button className='edit-employee-btn'> Edit </button>   
+                            <button className='view-employee-btn'> View </button>
+                            <button className='delete-employee-btn'> X </button>
+                        </td>
                     </tr>
                     <tr>
                         <td>John Doobah</td>
                         <td>Description 2</td>
                         <td>Medium</td>
                         <td>Yes</td>
+                        <td>
+                            <button className='edit-employee-btn'> Edit </button>   
+                            <button className='view-employee-btn'> View </button>
+                            <button className='delete-employee-btn'> X </button>
+                        </td>
                     </tr>
                     <tr>
                         <td>John Doe</td>
                         <td>Description</td>
                         <td>Low</td>
                         <td>No</td>
+                        <td>
+                            <button className='edit-employee-btn'> Edit </button>   
+                            <button className='view-employee-btn'> View </button>
+                            <button className='delete-employee-btn'> X </button>
+                        </td>
                     </tr>
                 </tbody>
 
