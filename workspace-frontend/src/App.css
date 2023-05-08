@@ -64,7 +64,9 @@ nav{
   color: white;
   transition: 0.2s;
   font-size: 15px;
+  margin-top: 40px;
 }
+
 .add-btn:hover{
   background-color: #d387ef;
   cursor: pointer;

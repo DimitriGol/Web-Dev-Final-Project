@@ -6,12 +6,6 @@ function Tasks() {
     return (
         <div className="App">
             <h1> Tasks </h1>
-            {/* Add Task Button */}
-            <div>
-                <Link to='/add-task'>
-                    <button className='add-btn'> Add Task </button>
-                </Link>
-            </div>
             
             <table className='task-table'>
 
@@ -48,6 +42,13 @@ function Tasks() {
                 </tbody>
 
             </table>
+
+            {/* Add Task Button */}
+            <div>
+                <Link to='/add-task'>
+                    <button className='add-btn'> Add Task </button>
+                </Link>
+            </div>
         </div>
     )
 }
