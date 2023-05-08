@@ -80,13 +80,16 @@ table{
 
 td{
   padding: 8px 10px 8px 10px;
+  color: #2B2424;
+  font-weight: 500;
 }
 
 thead{
-  background-color: #ffffff;
+  color: #7b7a7a;
 }
 
 th{
+  font-weight: 300;
   padding: 8px 10px 8px 10px;
 }
 
@@ -104,7 +107,8 @@ tr:nth-child(odd) {background-color: #f2f2f2;}
 .view-employee-btn,
 .delete-employee-btn
 {
-  /* padding: 3px 8px 3px 8px; */
+  padding: 3px 8px 3px 8px;
+  font-weight: 500;
   margin: 5px;
   border-style: solid;
   border-radius: 10px;
@@ -125,14 +129,14 @@ tr:nth-child(odd) {background-color: #f2f2f2;}
 
 .view-employee-btn:hover{
   cursor: pointer;
-  border-color: #ededed;
+  border: none;
   color: #ededed;
   background-color: #bf63e1;
 }
 
 .delete-employee-btn:hover{
   cursor: pointer;
-  border-color: #ededed;
+  border: none;
   color: #ededed;
   background-color: #FF5C5C;
 }
