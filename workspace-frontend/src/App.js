@@ -20,11 +20,4 @@ function App() {
   );
 }
 
-// const Home = () => (
-//   <div>
-//     <h1>Logo</h1>
-//     <p>All-in-one hub for managing employees and tasks</p>
-//   </div>
-// );
-
 export default App;
