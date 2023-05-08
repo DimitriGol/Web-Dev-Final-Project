@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import '../App.css';
 
 function Employees() {
@@ -9,7 +10,11 @@ function Employees() {
         <div className="App">
             <h1> Employees </h1>
             {/* Add new employee */}
-            <button className='add-btn'> Add Employee </button>
+            <div>
+                <Link to='/add-employee'>
+                    <button className='add-btn'> Add Employee </button>
+                </Link>
+            </div>
 
             {/* Get list of employees and output it here */}
 

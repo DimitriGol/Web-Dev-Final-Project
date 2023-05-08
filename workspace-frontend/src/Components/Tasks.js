@@ -1,11 +1,17 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import '../App.css';
 
 function Tasks() {
     return (
         <div className="App">
             <h1> Tasks </h1>
-            <button className='add-btn'>Add Task</button>
+            {/* Add Task Button */}
+            <div>
+                <Link to='/add-task'>
+                    <button className='add-btn'> Add Task </button>
+                </Link>
+            </div>
             
             <table className='task-table'>
 
