@@ -10,11 +10,11 @@ function Tasks() {
             <table className='task-table'>
 
                 <thead>
-                    <th>Task</th>
-                    <th>Description</th>
-                    <th>Priority</th>
-                    <th>Completed</th>
-                    <th>Assigned To</th>
+                    <th>TASK</th>
+                    <th>DESCRIPTION</th>
+                    <th>PRIORITY</th>
+                    <th>COMPLETED</th>
+                    <th>ASSIGNED TO</th>
                 </thead>
 
                 <tbody>

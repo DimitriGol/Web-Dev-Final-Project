@@ -17,9 +17,9 @@ function Employees() {
             <table>
                 <thead>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Department</th>
-                    <th>Actions</th>
+                    <th>NAME</th>
+                    <th>DEPARTMENT</th>
+                    <th>ACTIONS</th>
                 </thead>
                 {/* Example Single Employee */}
                 {/* <tbody>
