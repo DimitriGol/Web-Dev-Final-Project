@@ -4,9 +4,6 @@ import {Link} from 'react-router-dom';
 import Logo from '../workspace-logo-2.png';
 
 function Nav(){
-    const NavStyle = {
-        color: 'black'
-    };
 
     return (
         <nav>
