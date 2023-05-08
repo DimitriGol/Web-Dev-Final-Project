@@ -106,8 +106,10 @@ tr:nth-child(odd) {background-color: #f2f2f2;}
   width: 75%;
 }
 
+/* Action Buttons */
 .view-employee-btn,
-.delete-employee-btn
+.delete-employee-btn,
+.edit-employee-btn
 {
   padding: 3px 8px 3px 8px;
   font-weight: 500;
@@ -119,6 +121,11 @@ tr:nth-child(odd) {background-color: #f2f2f2;}
   font-size: 16px;;
 }
 
+.edit-employee-btn{
+  border-color: #3f9ab8;
+  color: #3f9ab8;
+}
+
 .view-employee-btn{
   border-color: #bf63e1;
   color: #bf63e1;
@@ -127,6 +134,13 @@ tr:nth-child(odd) {background-color: #f2f2f2;}
 .delete-employee-btn{
   border-color: #FF5C5C;
   color: #FF5C5C;
+}
+
+.edit-employee-btn:hover{
+  cursor: pointer;
+  border: none;
+  color: #ededed;
+  background-color: #3f9ab8;
 }
 
 .view-employee-btn:hover{
@@ -142,6 +156,8 @@ tr:nth-child(odd) {background-color: #f2f2f2;}
   color: #ededed;
   background-color: #FF5C5C;
 }
+
+
 
 
 /* AddEmployee.js */

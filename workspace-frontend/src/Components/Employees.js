@@ -44,6 +44,7 @@ function Employees() {
                         <td>John Doe</td>
                         <td>Sales</td>
                         <td>
+                            <button className='edit-employee-btn'> Edit </button>   
                             <button className='view-employee-btn'> View </button>
                             <button className='delete-employee-btn'> X </button>
                         </td>
@@ -53,6 +54,7 @@ function Employees() {
                         <td>John Doobah</td>
                         <td>Human Resources</td>
                         <td>
+                            <button className='edit-employee-btn'> Edit </button>
                             <button className='view-employee-btn'> View </button>
                             <button className='delete-employee-btn'> X </button>
                         </td>
@@ -62,6 +64,7 @@ function Employees() {
                         <td>Johnny III</td>
                         <td>Tech</td>
                         <td>
+                            <button className='edit-employee-btn'> Edit </button>
                             <button className='view-employee-btn'> View </button>
                             <button className='delete-employee-btn'> X </button>
                         </td>
