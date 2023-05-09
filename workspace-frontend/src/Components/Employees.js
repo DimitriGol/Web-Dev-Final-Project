@@ -1,74 +1,54 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
+import list1 from './Data';
 
-function Employees() {
+//list1.addEmployee("John", "Doe", "Sales")
+//list1.addEmployee("John", "Doobah", "Human Resources");
+//list1.addEmployee("Johnny", "III", "Tech");
 
+export function Employees() {
     // const [employees, setEmploes] = useState([])
 
+    const deleteEmployee = (index) => {
+        return () => {
+            list1.deleteEmployee(index);
+            console.log(list1.employees);
+        }
+    }
     return (
         <div className="App">
-            <h1> Employees </h1>            
-
-            {/* Get list of employees and output it here */}
-
+            <h1> Employees </h1>
             {/* Employee table  */}
             <table>
-                <thead>
-                    <th>ID</th>
-                    <th>NAME</th>
-                    <th>DEPARTMENT</th>
-                    <th>ACTIONS</th>
-                </thead>
                 {/* Example Single Employee */}
-                {/* <tbody>
-                    {
-                        employees.map(
-                            employee => 
-                            <tr key={employee.id}>
-                                <td>{employee.id}</td> 
-                                <td>{employee.name}</td>
-                                <td>{employee.department}</td>
-                                <td>
-                                    <button className='view-employee-btn'> View </button>
-                                    <button className='delete-employee-btn'> X </button>
-                                </td>   
-                            </tr>  
-                              
-                        )
-                    }
-                </tbody> */}
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>Sales</td>
-                        <td>
-                            <button className='edit-employee-btn'> Edit </button>   
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
-                        </td>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>DEPARTMENT</th>
+                        <th>ACTIONS</th>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>John Doobah</td>
-                        <td>Human Resources</td>
-                        <td>
-                            <button className='edit-employee-btn'> Edit </button>
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Johnny III</td>
-                        <td>Tech</td>
-                        <td>
-                            <button className='edit-employee-btn'> Edit </button>
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
-                        </td>
-                    </tr>
+                    {
+                        list1.employees.map((employee, index) =>
+                            <tr key={index + 1}>
+                                <td>{index + 1}</td>
+                                <td>{employee.firstName + " "}
+                                    {employee.lastName}
+                                </td>
+                                <td>{employee.department}</td>
+                                <td>
+                                    <Link to={'/employees/' + index} element={<ViewEmployee />}>
+                                        <button className='view-employee-btn'> View </button>
+                                    </Link>
+                                    <Link to={'/edit-employee/' + index} element={<EditEmployee />}>
+                                        <button className='edit-employee-btn'> Edit </button>
+                                    </Link>
+                                    <button className='delete-employee-btn' onClick={deleteEmployee(index)}> X </button>
+                                </td>
+                            </tr>
+                        )
+                    }
                 </tbody>
             </table>
 
@@ -79,6 +59,16 @@ function Employees() {
                 </Link>
             </div>
         </div>
+    )
+}
+
+export function EditEmployee() {
+    return (<div></div>
+    )
+}
+
+export function ViewEmployee() {
+    return (<div></div>
     )
 }
 
