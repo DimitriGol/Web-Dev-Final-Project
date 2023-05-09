@@ -14,39 +14,26 @@ function Employees() {
 
             {/* Employee table  */}
             <table>
-                <thead>
-                    <th>ID</th>
-                    <th>NAME</th>
-                    <th>DEPARTMENT</th>
-                    <th>ACTIONS</th>
-                </thead>
-                {/* Example Single Employee */}
-                {/* <tbody>
-                    {
-                        employees.map(
-                            employee => 
-                            <tr key={employee.id}>
-                                <td>{employee.id}</td> 
-                                <td>{employee.name}</td>
-                                <td>{employee.department}</td>
-                                <td>
-                                    <button className='view-employee-btn'> View </button>
-                                    <button className='delete-employee-btn'> X </button>
-                                </td>   
-                            </tr>  
-                              
-                        )
-                    }
-                </tbody> */}
+            
                 <tbody>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>DEPARTMENT</th>
+                        <th>ACTIONS</th>
+                    </tr>
+
                     <tr>
                         <td>1</td>
                         <td>John Doe</td>
                         <td>Sales</td>
                         <td>
-                            <button className='edit-employee-btn'> Edit </button>   
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
+                            <button className='edit-btn'> Edit </button>
+                            <Link to={`/employees/view-employee`}>
+                                <button className='view-btn'> View </button>
+                            </Link>   
+                            <button className='delete-btn'> X </button>
                         </td>
                     </tr>
                     <tr>
@@ -54,9 +41,11 @@ function Employees() {
                         <td>John Doobah</td>
                         <td>Human Resources</td>
                         <td>
-                            <button className='edit-employee-btn'> Edit </button>
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
+                            <button className='edit-btn'> Edit </button>
+                            <Link to={`/employees/view-employee`}>
+                                <button className='view-btn'> View </button>
+                            </Link>  
+                            <button className='delete-btn'> X </button>
                         </td>
                     </tr>
                     <tr>
@@ -64,9 +53,11 @@ function Employees() {
                         <td>Johnny III</td>
                         <td>Tech</td>
                         <td>
-                            <button className='edit-employee-btn'> Edit </button>
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
+                            <button className='edit-btn'> Edit </button>
+                            <Link to={`/employees/view-employee`}>
+                                <button className='view-btn'> View </button>
+                            </Link>  
+                            <button className='delete-btn'> X </button>
                         </td>
                     </tr>
                 </tbody>
