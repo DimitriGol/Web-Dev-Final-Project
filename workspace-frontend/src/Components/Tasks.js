@@ -9,24 +9,25 @@ function Tasks() {
             
             <table className='task-table'>
 
-                <thead>
-                    <th>ASSIGNED TO</th>
-                    <th>DESCRIPTION</th>
-                    <th>PRIORITY</th>
-                    <th>COMPLETED</th>
-                    <th>ACTIONS</th>
-                </thead>
-
                 <tbody>
+
+                    <tr>
+                        <th>ASSIGNED TO</th>
+                        <th>DESCRIPTION</th>
+                        <th>PRIORITY</th>
+                        <th>COMPLETED</th>
+                        <th>ACTIONS</th>
+                    </tr>
+
                     <tr>
                         <td>Johnny III</td>
                         <td>Make frontend responsive</td>
                         <td>High</td>
                         <td>No</td>
                         <td>
-                            <button className='edit-employee-btn'> Edit </button>   
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
+                            <button className='edit-btn'> Edit </button>   
+                            <button className='view-btn'> View </button>
+                            <button className='delete-btn'> X </button>
                         </td>
                     </tr>
                     <tr>
@@ -35,9 +36,9 @@ function Tasks() {
                         <td>Medium</td>
                         <td>Yes</td>
                         <td>
-                            <button className='edit-employee-btn'> Edit </button>   
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
+                            <button className='edit-btn'> Edit </button>   
+                            <button className='view-btn'> View </button>
+                            <button className='delete-btn'> X </button>
                         </td>
                     </tr>
                     <tr>
@@ -46,9 +47,9 @@ function Tasks() {
                         <td>Low</td>
                         <td>No</td>
                         <td>
-                            <button className='edit-employee-btn'> Edit </button>   
-                            <button className='view-employee-btn'> View </button>
-                            <button className='delete-employee-btn'> X </button>
+                            <button className='edit-btn'> Edit </button>   
+                            <button className='view-btn'> View </button>
+                            <button className='delete-btn'> X </button>
                         </td>
                     </tr>
                 </tbody>
