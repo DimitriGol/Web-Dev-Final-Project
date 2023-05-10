@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 function AddTask(){
@@ -6,17 +7,25 @@ function AddTask(){
     const [description, setDescription] = useState('');
     const [priority, setPriority] = useState('');
     const [completionStatus, setCompletionStatus] = useState(false);
+    const navigate = useNavigate();
 
     const checkHandler = () => {
         setCompletionStatus(!completionStatus);
-        console.log(completionStatus);
     }
 
     const saveTask = (e) => {
-        e.preventDefault();
-        const task = {description, priority, completionStatus};
-        
-        console.log(task);
+        if (description.length === 0 || priority.length === 0){
+            alert('Please fill out all fields');
+        }
+        else{
+            e.preventDefault();
+            const task = {description, priority, completionStatus};
+            
+            console.log(task);
+
+            // Navigate back to tasks page when form is submitted
+            navigate('/tasks');
+        }
     }
 
     return(
@@ -66,6 +75,7 @@ function AddTask(){
                     </div>
 
                     <button className='submit-form-btn' onClick={(e) => saveTask(e)}>Submit</button>
+                    <button className='back-btn' onClick={() => navigate('/employees')}>Back</button>'
                 </form>
             </div>
         </div>

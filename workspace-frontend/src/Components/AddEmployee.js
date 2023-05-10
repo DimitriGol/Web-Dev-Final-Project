@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import '../App.css';
 
 function AddEmployee(){
@@ -6,12 +7,21 @@ function AddEmployee(){
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [department, setDepartment] = useState('');
+    const navigate = useNavigate();
 
 
     const saveEmployee = (e) => {
-        e.preventDefault();
-        const employee = {firstName, lastName, department};
-        console.log(employee);
+        if (firstName.length === 0 || lastName.length === 0 || department.length === 0){
+            alert("Please fill all the fields");
+        }
+        else{
+            e.preventDefault();
+            const employee = {firstName, lastName, department};
+            console.log(employee);
+    
+            // Goes back to employee table when the form is submitted
+            navigate('/employees');
+        }
     }
 
     return(
@@ -59,6 +69,7 @@ function AddEmployee(){
                     </div>
 
                     <button className='submit-form-btn' onClick={(e) => saveEmployee(e)}>Submit</button>
+                    <button className='back-btn' onClick={() => navigate('/employees')}>Back</button>'
                 </form>
             </div>
         </div>
