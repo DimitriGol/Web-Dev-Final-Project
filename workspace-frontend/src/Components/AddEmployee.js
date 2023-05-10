@@ -1,23 +1,34 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
-import list1 from './Data';
 
-function addEmployee(firstName,lastName,department)
-{
-    list1.addEmployee(firstName, lastName, department);
-}
+import list1 from './Server';
 
 function AddEmployee() {
+
+    function addEmployee(firstName, lastName, department) {
+        list1.addEmployee(firstName, lastName, department);
+    }
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [department, setDepartment] = useState('');
+    const navigate = useNavigate();
 
 
     const saveEmployee = (e) => {
-        e.preventDefault();
-        addEmployee(firstName,lastName,department);
-        console.log(list1.employees);
+        if (firstName.length === 0 || lastName.length === 0 || department.length === 0) {
+            alert("Please fill all the fields");
+        }
+        else {
+            e.preventDefault();
+            addEmployee(firstName,lastName,department);
+            const employee = { firstName, lastName, department };
+            console.log(employee);
+
+            // Goes back to employee table when the form is submitted
+            navigate('/employees');
+        }
     }
 
     return (
@@ -63,13 +74,10 @@ function AddEmployee() {
                         >
                         </input>
                     </div>
+
                     <button className='submit-form-btn' onClick={(e) => saveEmployee(e)}>Submit</button>
+                    <button className='back-btn' onClick={() => navigate('/employees')}>Back</button>'
                 </form>
-            </div>
-            <div>
-                <Link to='/employees'>
-                    <button className='add-btn'> Back </button>
-                </Link>
             </div>
         </div>
     )
