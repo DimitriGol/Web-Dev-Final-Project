@@ -25,8 +25,10 @@ function Tasks() {
                         <td>High</td>
                         <td>No</td>
                         <td>
-                            <button className='edit-btn'> Edit </button>   
-                            <button className='view-btn'> View </button>
+                            <button className='edit-btn'> Edit </button>
+                            <Link to='/tasks/view-task'>
+                                <button className='view-btn'> View </button>
+                            </Link>   
                             <button className='delete-btn'> X </button>
                         </td>
                     </tr>
@@ -36,8 +38,10 @@ function Tasks() {
                         <td>Medium</td>
                         <td>Yes</td>
                         <td>
-                            <button className='edit-btn'> Edit </button>   
-                            <button className='view-btn'> View </button>
+                            <button className='edit-btn'> Edit </button>
+                            <Link to='/tasks/view-task'>
+                                <button className='view-btn'> View </button>
+                            </Link>   
                             <button className='delete-btn'> X </button>
                         </td>
                     </tr>
@@ -47,8 +51,10 @@ function Tasks() {
                         <td>Low</td>
                         <td>No</td>
                         <td>
-                            <button className='edit-btn'> Edit </button>   
-                            <button className='view-btn'> View </button>
+                            <button className='edit-btn'> Edit </button>
+                            <Link to='/tasks/view-task'>
+                                <button className='view-btn'> View </button>
+                            </Link>   
                             <button className='delete-btn'> X </button>
                         </td>
                     </tr>
