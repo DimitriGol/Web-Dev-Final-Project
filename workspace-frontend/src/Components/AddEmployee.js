@@ -15,7 +15,6 @@ function AddEmployee() {
     const [department, setDepartment] = useState('');
     const navigate = useNavigate();
 
-
     const saveEmployee = (e) => {
         if (firstName.length === 0 || lastName.length === 0 || department.length === 0) {
             alert("Please fill all the fields");
@@ -25,7 +24,6 @@ function AddEmployee() {
             addEmployee(firstName,lastName,department);
             const employee = { firstName, lastName, department };
             console.log(employee);
-
             // Goes back to employee table when the form is submitted
             navigate('/employees');
         }

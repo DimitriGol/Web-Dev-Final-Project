@@ -28,9 +28,8 @@ function Tasks() {
                         <th>DESCRIPTION</th>
                         <th>PRIORITY</th>
                         <th>COMPLETED</th>
-                        <th>ACTIONS</th>
+                        <th>ACTIONS</th
                     </tr>
-
                     {
                         tasks.map((task, index) =>
                             <tr key={index + 1}>
@@ -51,9 +50,7 @@ function Tasks() {
                         )
                     }
                 </tbody>
-
             </table>
-
             {/* Add Task Button */}
             <div>
                 <Link to='/add-task'>
