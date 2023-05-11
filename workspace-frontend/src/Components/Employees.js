@@ -1,65 +1,55 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
-function Employees() {
+import list1 from './Server';
 
-    // const [employees, setEmploes] = useState([])
+function Employees() {
+    // GetAllEmployees
+    let employees = list1.employees;
+
+    const navigate = useNavigate();
+
+    // DeleteEmployee
+    function deleteEmployee(index) {
+        return () => {
+            list1.deleteEmployee(index);
+            console.log(list1.employees);
+            navigate('/employees');
+        };
+    }
 
     return (
         <div className="App">
-            <h1> Employees </h1>            
-
-            {/* Get list of employees and output it here */}
-
-            {/* Employee table  */}
+            <h1> Employees </h1>
             <table>
-            
                 <tbody>
-
                     <tr>
                         <th>ID</th>
                         <th>NAME</th>
                         <th>DEPARTMENT</th>
                         <th>ACTIONS</th>
                     </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>Sales</td>
-                        <td>
-                            <button className='edit-btn'> Edit </button>
-                            <Link to={`/employees/view-employee`}>
-                                <button className='view-btn'> View </button>
-                            </Link>   
-                            <button className='delete-btn'> X </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>John Doobah</td>
-                        <td>Human Resources</td>
-                        <td>
-                            <button className='edit-btn'> Edit </button>
-                            <Link to={`/employees/view-employee`}>
-                                <button className='view-btn'> View </button>
-                            </Link>  
-                            <button className='delete-btn'> X </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Johnny III</td>
-                        <td>Tech</td>
-                        <td>
-                            <button className='edit-btn'> Edit </button>
-                            <Link to={`/employees/view-employee`}>
-                                <button className='view-btn'> View </button>
-                            </Link>  
-                            <button className='delete-btn'> X </button>
-                        </td>
-                    </tr>
+                    {
+                        employees.map((employee, index) =>
+                            <tr key={index + 1}>
+                                <td>{index + 1}</td>
+                                <td>{employee.firstName + " " + employee.lastName}
+                                </td>
+                                <td>{employee.department}</td>
+                                <td>
+                                    <Link to={'/employees/view-employee'}>
+                                        <button className='view-btn'> View </button>
+                                    </Link>
+                                    <Link to={'/edit-employee/' + index}>
+                                        <button className='edit-btn'> Edit </button>
+                                    </Link>
+                                    <button className='delete-btn' onClick={deleteEmployee(index)}> X </button>
+                                </td>
+                            </tr>
+                        )
+                    }
                 </tbody>
             </table>
 
