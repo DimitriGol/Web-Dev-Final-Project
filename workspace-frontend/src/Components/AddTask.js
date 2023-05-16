@@ -2,7 +2,14 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
+import list1 from './Server';
+
 function AddTask(){
+
+    function addTask() {
+        let user = list1.employees[0];
+        list1.addTask(user, description, priority, completionStatus);
+    }
 
     const [description, setDescription] = useState('');
     const [priority, setPriority] = useState('');
@@ -19,6 +26,7 @@ function AddTask(){
         }
         else{
             e.preventDefault();
+            addTask();
             const task = {description, priority, completionStatus};
             
             console.log(task);

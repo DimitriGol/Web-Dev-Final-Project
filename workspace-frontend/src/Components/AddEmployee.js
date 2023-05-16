@@ -1,69 +1,74 @@
-import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
-function AddEmployee(){
+import list1 from './Server';
+
+function AddEmployee() {
+
+    function addEmployee(firstName, lastName, department) {
+        list1.addEmployee(firstName, lastName, department);
+    }
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [department, setDepartment] = useState('');
     const navigate = useNavigate();
 
-
     const saveEmployee = (e) => {
-        if (firstName.length === 0 || lastName.length === 0 || department.length === 0){
+        if (firstName.length === 0 || lastName.length === 0 || department.length === 0) {
             alert("Please fill all the fields");
         }
-        else{
+        else {
             e.preventDefault();
-            const employee = {firstName, lastName, department};
+            addEmployee(firstName,lastName,department);
+            const employee = { firstName, lastName, department };
             console.log(employee);
-    
             // Goes back to employee table when the form is submitted
             navigate('/employees');
         }
     }
 
-    return(
+    return (
         <div className='App'>
             <h1>Add Employee</h1>
             <div className='card-body'>
                 <form>
                     <div className='form-group'>
                         <label className='form-label'> First Name: </label>
-                        <input 
+                        <input
                             className='form-control'
-                            type = 'text'
+                            type='text'
                             placeholder='Enter First Name'
-                            name = 'firstName'
-                            value = {firstName}
-                            onChange = {(e) => setFirstName(e.target.value)}
+                            name='firstName'
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
                         >
                         </input>
                     </div>
 
                     <div className='form-group'>
                         <label className='form-label'> Last Name: </label>
-                        <input 
+                        <input
                             className='form-control'
-                            type = 'text'
+                            type='text'
                             placeholder='Enter Last Name'
-                            name = 'lastName'
-                            value = {lastName}
-                            onChange = {(e) => setLastName(e.target.value)}
+                            name='lastName'
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                         >
                         </input>
                     </div>
 
                     <div className='form-group'>
                         <label className='form-label'> Department: </label>
-                        <input 
+                        <input
                             className='form-control'
-                            type = 'text'
+                            type='text'
                             placeholder='Enter Department'
-                            name = 'department'
-                            value = {department}
-                            onChange = {(e) => setDepartment(e.target.value)}
+                            name='department'
+                            value={department}
+                            onChange={(e) => setDepartment(e.target.value)}
                         >
                         </input>
                     </div>
