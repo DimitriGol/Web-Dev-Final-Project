@@ -210,6 +210,13 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 }
 
 /* AddTask.js */
+
+.assign-to-control{
+  height: 4vh;
+  width: auto;
+  font-size: 18px;
+}
+
 .option-control{
   height: 4vh;
   width: 7rem;
@@ -248,4 +255,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 .back-btn:hover{
   cursor: pointer;
   background-color: #f47070;
+}
+
+.error-message{
+  color:#f63f3f;
+  font-weight: 500;
+  margin-bottom: 0px;
 }
