@@ -1,19 +1,23 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../App.css';
 
 import list1 from './Server';
 
 function AddTask(){
 
-    function addTask() {
-        let user = list1.employees[0];
+    let employees = list1.employees;
+
+    function addTask(user) {
+        // let user = list1.employees[0];
         list1.addTask(user, description, priority, completionStatus);
     }
 
+    const [user, setUser] = useState('');
     const [description, setDescription] = useState('');
     const [priority, setPriority] = useState('');
     const [completionStatus, setCompletionStatus] = useState(false);
+
     const navigate = useNavigate();
 
     const checkHandler = () => {
@@ -21,13 +25,14 @@ function AddTask(){
     }
 
     const saveTask = (e) => {
-        if (description.length === 0 || priority.length === 0){
+        if (user.length === 0 || description.length === 0 || priority.length === 0){
             alert('Please fill out all fields');
+            
         }
         else{
             e.preventDefault();
             addTask();
-            const task = {description, priority, completionStatus};
+            const task = {user, description, priority, completionStatus};
             
             console.log(task);
 
@@ -38,9 +43,35 @@ function AddTask(){
 
     return(
         <div className='App'>   
-            <h1>Add Task</h1>         
+            <h1>Add Task</h1>
+            {employees.length === 0 ? (
+                <div>
+                    <p className='error-message'> There are no employees. Click the button below to add one. </p>
+                    <Link to='/add-employee'>
+                        <button className='add-btn'> Add Employee </button>
+                    </Link>
+                </div>
+            ) : (         
             <div className='card-body'>
                 <form>
+                    <div className='form-group'>
+                        <label className='form-label'> Assign To: </label>
+                        <select
+                        className='assign-to-control' 
+                        name='user'
+                        value={user} 
+                        onChange={(e) => setUser(e.target.value)} 
+                        >   
+                            <option value=''>Select an employee</option>
+                            {employees.map((employee, index) => (
+                                <option key={index} value={employee.firstName + " " + employee.lastName}>
+                                    {employee.firstName} {employee.lastName}
+                                </option>
+                            ))}
+
+                        </select>
+                    </div>
+
                     <div className='form-group'>
                         <label className='form-label'> Description: </label>
                         <input 
@@ -86,6 +117,7 @@ function AddTask(){
                     <button className='back-btn' onClick={() => navigate('/employees')}>Back</button>'
                 </form>
             </div>
+        )}
         </div>
     )
 
