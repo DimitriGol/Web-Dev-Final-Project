@@ -24,7 +24,8 @@ function App() {
           <Route path="/add-task" element={<AddTask/>} />
 
           {/* These routes will be changed later, just used to test */}
-          <Route path="/employees/view-employee" element={<ViewEmployee/>} />
+          <Route path="/employees/:id" element={<ViewEmployee/>} />
+          {/* <Route path="/view-employees/:id" element={<EditEmployee/>} /> */}
           <Route path="/tasks/view-task" element={<ViewTask/>} />"
         </Routes>
       </div>
